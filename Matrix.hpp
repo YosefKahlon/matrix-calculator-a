@@ -25,42 +25,39 @@ namespace zich {
         ~Matrix();
 
         Matrix operator+(const Matrix &other);
-
-        Matrix operator+=(const Matrix &other);
-
-        Matrix operator++();
-
         Matrix operator-(const Matrix &other);
 
+        Matrix operator+=(const Matrix &other);
+        Matrix operator-=(const Matrix &other);
+        friend Matrix operator*=(Matrix &other, double num);
+
+
+        Matrix operator++();
         Matrix operator--();
 
-        Matrix operator-=(const Matrix &other);
+
 
 
         bool operator>(const Matrix &other);
-
         bool operator<(const Matrix &other);
-
         bool operator==(const Matrix &other);
-
         bool operator!=(const Matrix &other);
-
         bool operator>=(const Matrix &other);
-
         bool operator<=(const Matrix &other);
 
-        // this * other
+
+
+
         Matrix operator*(const Matrix &other);
-
         friend Matrix operator-(Matrix &matrix1);
-
         friend Matrix operator*(double num, Matrix &other);
 
-        friend Matrix operator*=(Matrix &other, double num);
+
+
+
 
         //output
         friend ostream &operator<<(ostream &os, const Matrix &matrix1);
-
         //input
         friend iostream &operator>>(iostream &os, const Matrix &matrix1);
 
